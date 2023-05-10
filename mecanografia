@@ -1,0 +1,25 @@
+import random
+import time
+
+def mecanografia(frase):
+    """
+    Función que simula un tutor de mecanografía
+    :param frase: la frase que el usuario debe escribir
+    """
+    print("Bienvenido al tutor de mecanografía")
+    print("Escribe la siguiente frase lo más rápido y exacto posible:")
+    print(frase)
+    print("Presiona Enter para comenzar")
+    input()
+
+    inicio = time.time()  # tiempo de inicio de la mecanografía
+    intentos = 0  # contador de intentos
+    while True:
+        intentos += 1
+        entrada = input()
+        if entrada == frase:
+            tiempo = time.time() - inicio  # tiempo total de mecanografía
+            print("¡Perfecto! Lo lograste en {:.2f} segundos con {} intentos".format(tiempo, intentos))
+            break
+        else:
+            print("Error, vuelve a intentarlo")
